@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.example.Main",
+            "projectName": "stream",
+            
+        },
+        {
+            "type": "java",
+            "name": "ConsumerKefka",
+            "request": "launch",
+            "mainClass": "com.example.ConsumerKafka",
+            "projectName": "stream",
+            "args":["localhost:9092","rev","mySparkConsumerGroup"]
+        },
+
+        {
+            "type": "java",
+            "name": "ProducerKafka",
+            "request": "launch",
+            "mainClass": "com.example.Producers.ProducerKafka",
+            "projectName": "stream",
+            "args":["rev"]
+        },
+
+    ]
+        }
+ 
