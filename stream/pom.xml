@@ -60,16 +60,23 @@
     <artifactId>poi-ooxml</artifactId>
     <version>5.2.4</version>
   </dependency>
-        <dependency>
+        <!-- <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-sync</artifactId>
     <version>3.12.10</version>
-    </dependency>
-<dependency>
-    <groupId>org.mongodb.spark</groupId>
-    <artifactId>mongo-spark-connector_2.11</artifactId>
-    <version>2.0.0</version>
+    </dependency> --> 
+    
+    <dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>mongodb-driver-sync</artifactId>
+    <version>4.4.0</version> <!-- Replace with your desired version -->
 </dependency>
+
+    <dependency>
+        <groupId>org.mongodb.spark</groupId>
+        <artifactId>mongo-spark-connector_2.12</artifactId>
+        <version>3.0.0</version>
+    </dependency>
 </dependencies>
 
 

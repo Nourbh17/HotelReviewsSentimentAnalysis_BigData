@@ -24,7 +24,7 @@
             "request": "launch",
             "mainClass": "com.example.ConsumerKafka",
             "projectName": "stream",
-            "args":["localhost:9092","sent","mySparkConsumerGroup"]
+            "args":["localhost:9092","bigData","mySparkConsumerGroup"]
         },
 
         {
@@ -33,7 +33,7 @@
             "request": "launch",
             "mainClass": "com.example.Producers.ProducerKafka",
             "projectName": "stream",
-            "args":["sent","stream/src/main/resources/input/reviews.xlsx"]
+            "args":["bigData","stream/src/main/resources/input/reviews.xlsx"]
         },
 
     ]
