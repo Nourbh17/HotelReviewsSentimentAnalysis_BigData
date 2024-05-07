@@ -51,7 +51,7 @@ public class ProducerKafka {
         Producer<String, String> producer = new KafkaProducer<>(props);
 
          // Path to the Excel file
-        String excelFilePath = "reviews.xlsx";
+        String excelFilePath = args[1];
 
         try (FileInputStream inputStream = new FileInputStream(excelFilePath)) {
 
@@ -78,14 +78,15 @@ public class ProducerKafka {
 
                 // traitement 
                 String msg = message.toString();
-                String[] tab = msg.split(",");
-                int neg = (int) Double.parseDouble(tab[8]);;
-                int pos = (int) Double.parseDouble(tab[11]);; 
-                String sent = sentimentAnalysis(neg,pos);
-                String final_msg =tab[5] + tab[6] + sent  ;
-                // Send the message to the Kafka topic
-                producer.send(new ProducerRecord<>(topicName, final_msg));
-                System.out.println("Message sent successfully: " + final_msg);
+                // String[] tab = msg.split(",");
+                // int neg = (int) Double.parseDouble(tab[8]);;
+                // int pos = (int) Double.parseDouble(tab[11]);; 
+                // String sent = sentimentAnalysis(neg,pos);
+                // String final_msg =tab[5] + tab[6] + sent  ;
+                // // Send the message to the Kafka topic
+                producer.send(new ProducerRecord<>(topicName, msg));
+
+                System.out.println("Message sent successfully: " + msg);
 
             }
 

@@ -20,11 +20,11 @@
         },
         {
             "type": "java",
-            "name": "ConsumerKefka",
+            "name": "ConsumerKafka",
             "request": "launch",
             "mainClass": "com.example.ConsumerKafka",
             "projectName": "stream",
-            "args":["localhost:9092","rev","mySparkConsumerGroup"]
+            "args":["localhost:9092","sent","mySparkConsumerGroup"]
         },
 
         {
@@ -33,7 +33,7 @@
             "request": "launch",
             "mainClass": "com.example.Producers.ProducerKafka",
             "projectName": "stream",
-            "args":["rev"]
+            "args":["sent","stream/src/main/resources/input/reviews.xlsx"]
         },
 
     ]
