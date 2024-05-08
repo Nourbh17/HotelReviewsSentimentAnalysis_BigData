@@ -6,9 +6,9 @@ Nour Ben Hajla
 
 @Intidhar Ben Hnia
 
-[@Intidhar Ben Hnia](https://github.com/friend_username)
+[@Intidhar Ben Hnia]([https://github.com/friend_username](https://github.com/intidharr))
 
-@Farah-Abdelkefi
+[@Farah-Abdelkefi] ([https://github.com/Farah-Abdelkefi])
 
 
 In this project we made a pipeline to process two Hotels Databases from Kaggle.
