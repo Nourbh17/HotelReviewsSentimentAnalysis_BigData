@@ -24,7 +24,7 @@
             "request": "launch",
             "mainClass": "com.example.ConsumerKafka",
             "projectName": "stream",
-            "args":["localhost:9092","bigData","mySparkConsumerGroup"]
+            "args":["localhost:9092","SARev","mySparkConsumerGroup"]
         },
 
         {
@@ -33,7 +33,15 @@
             "request": "launch",
             "mainClass": "com.example.Producers.ProducerKafka",
             "projectName": "stream",
-            "args":["bigData","stream/src/main/resources/input/reviews.xlsx"]
+            "args":["SARev","stream/src/main/resources/input/reviews.xlsx"]
+        },
+        {
+            "type": "java",
+            "name": "KafkaBatch",
+            "request": "launch",
+            "mainClass": "com.example.KafkaBatch",
+            "projectName": "batchspark",
+            "args":["localhost:9092","mySparkConsumerGroup","batch2","batchspark/src/main/resources/output","batchspark/src/main/resources/output2"]
         },
 
     ]

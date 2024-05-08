@@ -39,9 +39,9 @@ public class ConsumerKafka {
         UDFRegistration udf = spark.udf();
         udf.register("sentimentAnalysis", (UDF2<Integer, Integer, String>) 
                 (neg_rev_word_count, pos_rev_word_count) -> {
-                    if (neg_rev_word_count - pos_rev_word_count > 50 || pos_rev_word_count == 0  )
+                    if (neg_rev_word_count - pos_rev_word_count >= 50 || pos_rev_word_count == 0  )
                         return "Negative";
-                    else if (neg_rev_word_count - pos_rev_word_count < -50 || neg_rev_word_count == 0)
+                    else if (neg_rev_word_count - pos_rev_word_count <= -50 || neg_rev_word_count == 0)
                         return "Positive";
                     else
                         return "Neutral";
@@ -58,15 +58,12 @@ public class ConsumerKafka {
                 .selectExpr("CAST(value AS STRING)")
                 .as(Encoders.STRING())
                 .selectExpr("split(value, ',') as data")
-            // .selectExpr("explode(split(data[5], ';')) as neg_rev", 
                 .selectExpr("cast(data[5] as string) as Hotel_Name",
                               "cast(data[6] as string) as Reviewr_Nationality",
                               "cast(data[13] as string) as Day_since_review",
                               "cast(data[8] as int) as neg_rev",
                               "cast(data[11] as int) as pos_rev");
-            // .map((MapFunction) line -> {
-
-            // });
+         
         Dataset<Row> dfWithSentiment = df.withColumn("sentiment",
                 callUDF("sentimentAnalysis", col("neg_rev"), col("pos_rev")));
 
@@ -91,7 +88,7 @@ public class ConsumerKafka {
                 batchDF.write()
                     .format("com.mongodb.spark.sql.DefaultSource")
                     .mode("append")
-                    .option("spark.mongodb.output.uri",  "mongodb://localhost:27017/Hotels." + collectionName)
+                    .option("spark.mongodb.output.uri",  "mongodb+srv://benhajlanour2:gPUbF29WMwsl9j4y@cluster0.blvpf1h.mongodb.net/Hotels." + collectionName)
                     .save();
         
         // Unpersist the DataFrame to release memory

@@ -12,15 +12,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ProducerKafka {
 
-    public static String sentimentAnalysis(int neg_rev_word_count, int pos_rev_word_count) {
-        if (neg_rev_word_count - pos_rev_word_count > 50)
-            return "Negative";
-        else if (neg_rev_word_count - pos_rev_word_count < -50)
-            return "Positive";
-        else
-            return "Neutral";
-    }
-
 
 
     public static void main(String[] args) throws Exception {
@@ -61,6 +52,9 @@ public class ProducerKafka {
             Workbook workbook = new XSSFWorkbook(inputStream);
             // Select the first sheet of the workbook
             Sheet sheet = workbook.getSheetAt(0);
+            int batchSize = 250;
+            int rowCount = 0;
+
 
             // Iterate over the rows of the sheet
             for (Row row : sheet) {
@@ -70,7 +64,7 @@ public class ProducerKafka {
             
                 for (Cell cell : row) {
                     if (message.length() > 0) {
-                        message.append(", "); // Add a comma and a space between the values
+                        message.append(","); // Add a comma and a space between the values
                     }
                     String cellValue = cell.toString();
                     message.append(cellValue);
@@ -78,13 +72,13 @@ public class ProducerKafka {
 
                 // traitement 
                 String msg = message.toString();
-                // String[] tab = msg.split(",");
-                // int neg = (int) Double.parseDouble(tab[8]);;
-                // int pos = (int) Double.parseDouble(tab[11]);; 
-                // String sent = sentimentAnalysis(neg,pos);
-                // String final_msg =tab[5] + tab[6] + sent  ;
-                // // Send the message to the Kafka topic
                 producer.send(new ProducerRecord<>(topicName, msg));
+                
+                rowCount++;
+
+                if (rowCount % batchSize == 0) {
+                    Thread.sleep(10000); // Sleep for 10 second after sending a batch
+                }
 
                 System.out.println("Message sent successfully: " + msg);
 
