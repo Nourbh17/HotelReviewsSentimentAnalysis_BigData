@@ -2,7 +2,7 @@ BigData Project :  Sentiment Analysis For Hotels Reviews
 
 Made by : 
 
-Nour Ben Hajla 
+
 [Nour Ben Hajla](https://github.com/Nourbh17)
 
 [Farah Abdelkefi](https://github.com/Farah-Abdelkefi)
