@@ -3,9 +3,11 @@ BigData Project :  Sentiment Analysis For Hotels Reviews
 Made by : 
 
 Nour Ben Hajla 
+[Nour Ben Hajla](https://github.com/Nourbh17)
 
-[@Farah-Abdelkefi](https://github.com/Farah-Abdelkefi)
-[@Intidhar Ben Hnia](https://github.com/intidharr)
+[Farah Abdelkefi](https://github.com/Farah-Abdelkefi)
+
+[Intidhar Ben Hnia](https://github.com/intidharr)
 
 
 In this project we made a pipeline to process two Hotels Databases from Kaggle.
