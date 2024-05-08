@@ -23,6 +23,8 @@ link :
 
 The pipeline includes batch and stream processing that's why it's based on the Lambda Architecture
 
+![image](https://github.com/Nourbh17/HotelReviewsSentimentAnalysis_BigData/assets/92574404/73ad1505-3124-4d95-869b-3748383df9b6)
+
 
 
 # 1-Data Ingestion
