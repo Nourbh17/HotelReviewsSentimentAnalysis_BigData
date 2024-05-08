@@ -4,8 +4,6 @@ Made by :
 
 Nour Ben Hajla 
 
-@Intidhar Ben Hnia
-
 [@Intidhar Ben Hnia]([https://github.com/friend_username](https://github.com/intidharr))
 
 [@Farah-Abdelkefi] ([https://github.com/Farah-Abdelkefi])
