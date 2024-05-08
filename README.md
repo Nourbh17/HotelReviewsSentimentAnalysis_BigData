@@ -10,7 +10,7 @@ Made by :
 [Intidhar Ben Hnia](https://github.com/intidharr)
 
 
-In this project we made a pipeline to process two Hotels Databases from Kaggle.
+In this project we made a pipeline to process two Hotels Datasets from Kaggle.
 
 link :
 
