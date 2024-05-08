@@ -4,9 +4,8 @@ Made by :
 
 Nour Ben Hajla 
 
-[@Intidhar Ben Hnia]([https://github.com/friend_username](https://github.com/intidharr))
-
-[@Farah-Abdelkefi] ([https://github.com/Farah-Abdelkefi])
+[@Farah-Abdelkefi](https://github.com/Farah-Abdelkefi)
+[@Intidhar Ben Hnia](https://github.com/intidharr)
 
 
 In this project we made a pipeline to process two Hotels Databases from Kaggle.
